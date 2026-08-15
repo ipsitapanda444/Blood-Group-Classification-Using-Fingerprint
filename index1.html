@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Group Detection</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background-color: #a3f8f8;
+            color: #1f0101;
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #050808;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .upload-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .upload-box:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+        input[type="file"] {
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            border: 2px dashed #0a9396;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        button {
+            background-color: #0a9396;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #007f8e;
+        }
+        .result {
+            margin-top: 30px;
+            font-size: 1.5em;
+            color: #333;
+        }
+        .result h3 {
+            font-weight: normal;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Log Out</a>
+    </div>
+    <div class="container">
+        <h1>Blood Group Detection using Fingerprint</h1>
+        <div class="upload-box">
+            <form action="/predict" method="POST" enctype="multipart/form-data">
+                <label for="fingerprint">Upload Fingerprint Image:</label>
+                <input type="file" name="fingerprint" id="fingerprint" accept="image/*" required>
+                <button type="submit">Predict Blood Group</button>
+            </form>
+        </div>
+        <div class="result">
+            <h3>Predicted Blood Group: </h3>
+        </div>
+    </div>
+</body>
+</html>
